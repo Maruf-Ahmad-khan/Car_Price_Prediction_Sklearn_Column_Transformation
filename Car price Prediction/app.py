@@ -12,7 +12,7 @@ import pickle
 import numpy as np
 
 # Load the pre-trained electric car linear regression model
-with open(r"C:\personal\Sklearn_And_Python_For_Interview\lr_model_wout.pkl", "rb") as file:
+with open(r"C:\personal\Sklearn_And_Python_For_Interview\Car price Prediction\lr_model_wout.pkl", "rb") as file:
     elr_model = pickle.load(file)
 
 # Streamlit app title
