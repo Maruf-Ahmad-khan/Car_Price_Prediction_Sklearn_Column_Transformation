@@ -24,12 +24,14 @@ compresses large values, expands small ones, and reduces right skew.
 - Negative/zero-heavy numeric: use log1p
 - Categorical: do not apply
 - Binary (0/1): not needed
+  
 5. Which Algorithms Benefit Most
 - Linear Models (LinearRegression, Ridge, Lasso, LogisticRegression): Strong improvement
 - Tree-Based Models (DecisionTree, RandomForest, XGBoost): Little or no effect
 - Distance-Based Models (KNN, SVM, KMeans): Helpful for stability
 - Neural Networks: Sometimes useful
 - Statistical Models (OLS, ARIMA, GLM): Often required
+  
 6. Common Transform Functions in Python
 import numpy as np
 np.log1p(x) # log(1 + x)
@@ -37,6 +39,7 @@ np.expm1(y) # exp(y) - 1 (inverse)
 from sklearn.preprocessing import FunctionTransformer
 log_trf = FunctionTransformer(np.log1p)
 X_log = log_trf.fit_transform(X)
+
 7. Interview Quick Answers
 Q1. Why apply log transform? -> Reduce skewness, linearize relationships, stabilize variance.
 Q2. When not to use it? -> When data is normal or contains negatives.
